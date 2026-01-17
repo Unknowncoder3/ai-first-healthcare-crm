@@ -1,17 +1,181 @@
-# React + Vite
+# 🏥 AI-First Healthcare CRM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An **AI-powered Healthcare CRM** built for pharmaceutical sales workflows.  
+This project demonstrates how modern agentic AI can transform traditional CRM systems into **intelligent assistants** that understand, log, analyze, and suggest follow-ups from real-world doctor interactions.
 
-Currently, two official plugins are available:
+It is designed as an internship task project, but structured like a **real enterprise SaaS product**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔧 Backend (FastAPI + Agent Architecture)
 
-## Expanding the ESLint configuration
+- `POST /api/chat`  
+  Conversational AI endpoint for:
+  - Logging interactions
+  - Editing records
+  - Querying history
+  - Generating follow-up suggestions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# ai-first-healthcare-crm
+- `POST /api/form/log`  
+  Traditional form-based logging for structured CRM data.
+
+- Agent-style routing:
+  - Intent detection
+  - Tool selection
+  - Context-aware responses
+  - Follow-up generation
+
+- Integrated with **Groq LLM** for fast, production-grade inference.
+
+---
+
+### 🎨 Frontend (React + Tailwind)
+
+- Enterprise CRM layout (Salesforce / HubSpot inspired)
+- Pages:
+  - **Dashboard** – KPIs & daily focus
+  - **AI Assistant** – Chat-style interaction
+  - **Log Interaction** – Structured form
+  - **History** – Doctor-wise interaction timeline
+- Features:
+  - Sidebar navigation
+  - Light/Dark mode
+  - Professional SaaS look
+  - Chat-style UI
+  - Form-based CRM workflow
+
+---
+
+## 🧱 Tech Stack
+
+### Backend
+- FastAPI
+- Python 3.11+
+- LangGraph / Agent routing
+- Groq API
+- Uvicorn
+
+### Frontend
+- React (Vite)
+- Tailwind CSS
+- Modern component layout
+- Responsive enterprise UI
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Backend Setup
+
+```bash
+cd backend
+conda activate ai-crm   # or your virtual env
+pip install -r requirements.txt
+````
+
+Create `.env`:
+
+```env
+GROQ_API_KEY=your_api_key_here
+```
+
+Run server:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Backend runs at:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+### 2️⃣ Frontend Setup
+
+```bash
+cd ai-crm-ui
+npm install
+npm run dev
+```
+
+Frontend runs at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🧠 Example Workflows
+
+### AI Assistant
+
+> “Met Dr. Mehta today. He’s concerned about dosage for elderly patients.”
+
+AI will:
+
+* Detect intent
+* Log interaction
+* Suggest follow-ups
+* Return structured data
+
+### Log Interaction Form
+
+Fill:
+
+* Doctor Name
+* Interaction Type
+* Sentiment
+* Summary
+* Follow-up Action
+* Date
+
+Submit → stored via `/api/form/log`
+
+### History
+
+Search:
+
+```
+Show me past interactions with Dr. Mehta
+```
+
+AI returns structured history, rendered as timeline cards.
+
+---
+
+## 🎯 What This Project Demonstrates
+
+* Full-stack architecture
+* Agentic AI workflows
+* Production-style API design
+* Enterprise UI thinking
+* Real-world business use case
+* LLM orchestration beyond “chatbot”
+
+This is **not a demo app** — it is a **mini product**.
+
+---
+
+## 📌 Future Enhancements
+
+* Persistent database
+* Auth & user roles
+* Streaming AI responses
+* Analytics dashboard
+* Multi-agent workflows
+
+---
+
+## 🧑‍💻 Author
+
+Built by **Snehasish Das**
+As part of an AI-first internship task, with a focus on:
+
+> *“How AI can become a core layer of business software — not just a feature.”*
+
